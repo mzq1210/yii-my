@@ -39,6 +39,13 @@ class UserBackend extends \yii\db\ActiveRecord implements IdentityInterface
             [['auth_key'], 'string', 'max' => 32],
             [['username'], 'unique'],
             [['email'], 'unique'],
+
+            [['sex'], 'integer'],
+            [['birthday'], 'safe'],
+            [['truename'], 'string', 'max' => 20],
+            [['avatar'], 'string', 'max' => 100],
+            [['phone'], 'string', 'max' => 11],
+            [['qq', 'weixin'], 'string', 'max' => 15],
         ];
     }
 
@@ -55,6 +62,15 @@ class UserBackend extends \yii\db\ActiveRecord implements IdentityInterface
             'email' => 'Email',
             'created_at' => 'Created At',
             'updated_at' => 'Updated At',
+
+            'truename' => '姓名',
+            'sex' => '性别',
+            'birthday' => '生日',
+            'avatar' => '头像',
+            'phone' => '手机',
+
+            'qq' => 'QQ',
+            'weixin' => '微信',
         ];
     }
 

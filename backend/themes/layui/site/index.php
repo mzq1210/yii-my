@@ -10,18 +10,10 @@ use yii\helpers\Url;
                 <i class="layui-icon layui-icon-shrink-right" id="LAY_app_flexible"></i>
             </a>
         </li>
-        <li class="layui-nav-item layui-hide-xs" lay-unselect>
-            <a href="http://www.layui.com/admin/" target="_blank" title="前台">
-                <i class="layui-icon layui-icon-website"></i>
-            </a>
-        </li>
         <li class="layui-nav-item" lay-unselect>
             <a href="javascript:;" layadmin-event="refresh" title="刷新">
                 <i class="layui-icon layui-icon-refresh-3"></i>
             </a>
-        </li>
-        <li class="layui-nav-item layui-hide-xs" lay-unselect>
-            <input type="text" placeholder="搜索..." autocomplete="off" class="layui-input layui-input-search" layadmin-event="serach" lay-action="template/search.html?keywords=">
         </li>
     </ul>
     <ul class="layui-nav layui-layout-right" lay-filter="layadmin-layout-right">
@@ -62,7 +54,7 @@ use yii\helpers\Url;
         </li>
 
         <li class="layui-nav-item layui-hide-xs" lay-unselect>
-            <a href="javascript:;" layadmin-event="about"><i class="layui-icon layui-icon-more-vertical"></i></a>
+            <a href="javascript:;"></a>
         </li>
         <li class="layui-nav-item layui-show-xs-inline-block layui-hide-sm" lay-unselect>
             <a href="javascript:;" layadmin-event="more"><i class="layui-icon layui-icon-more-vertical"></i></a>
@@ -73,8 +65,8 @@ use yii\helpers\Url;
 <!-- 侧边菜单 -->
 <div class="layui-side layui-side-menu">
     <div class="layui-side-scroll">
-        <div class="layui-logo" lay-href="">
-            <span>layuiAdmin</span>
+        <div class="layui-logo">
+            <span>CRM管理系统</span>
         </div>
 
         <?= $this->render('menu') ?>
