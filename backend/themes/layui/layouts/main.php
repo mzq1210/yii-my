@@ -2,6 +2,10 @@
 use yii\helpers\Html;
 
 backend\assets\LayuiAsset::register($this);
+
+$contro = Yii::$app->controller->id;
+$action = Yii::$app->controller->action->id;
+$router = $contro . '/'. $action;
 ?>
 <?php $this->beginPage() ?>
     <!DOCTYPE html>
@@ -14,9 +18,8 @@ backend\assets\LayuiAsset::register($this);
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
         <?php $this->head() ?>
-        <script src="/layuiadmin/layui/layui.js"></script>
     </head>
-    <body class="layui-layout-body">
+    <body class="<?= $router=='site/index'? 'layui-layout-body' : '';?>">
     <?php $this->beginBody() ?>
     <div id="LAY_app">
         <div class="layui-layout layui-layout-admin">

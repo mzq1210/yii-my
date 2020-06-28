@@ -11,7 +11,8 @@ class LayuiAsset extends AssetBundle
 
     public $css = [
         'layuiadmin/layui/css/layui.css',
-        'layuiadmin/style/admin.css'
+        'layuiadmin/style/admin.css',
+        'layuiadmin/style/my.css'
     ];
     public $js = [
         'layuiadmin/layui/layui.js'

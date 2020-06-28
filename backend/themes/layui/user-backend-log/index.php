@@ -3,7 +3,7 @@
 use yii\helpers\Html;
 use yii\grid\GridView;
 
-$this->title = 'Categories';
+$this->title = 'User Backend Logs';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 
@@ -20,17 +20,11 @@ $this->params['breadcrumbs'][] = $this->title;
                             <input class="layui-input" name="id" id="test-table-demoReload" autocomplete="off">
                         </div>
                         <button class="layui-btn" data-type="reload">搜索</button>
-                        <?= Html::a('增加分类', ['create'], [
-                            'class' => 'layui-btn',
-                            'id' => 'create', // 按钮的id随意
-                            'data-toggle' => 'modal', // 固定写法
-                            'data-target' => '#operate-modal', // 等于modal begin中设定的参数id值
-                        ]) ?>
                     </div>
-
 
                     <?= GridView::widget([
                         'dataProvider' => $dataProvider,
+                        //'filterModel' => $searchModel,
                         'tableOptions' => ['class' => 'layui-table'],
                         'pager' => [
                             'options' => ['class' => 'layuipage pull-right'],
@@ -42,18 +36,23 @@ $this->params['breadcrumbs'][] = $this->title;
                         ],
                         'columns' => [
                             ['class' => 'yii\grid\SerialColumn'],
+
                             'id',
-                            'name',
+                            'route',
+                            'description:ntext',
+                            'created_at',
+                            'user_id',
+
                             [
                                 'class' => 'yii\grid\ActionColumn',
                                 'template' => '{update}  {delete}',
                                 'header' => '操作',
                                 'buttons' => [
                                     'update' => function ($url, $model, $key) {
-                                        return Html::a("修改", $url, [
+                                        return Html::a("信息", $url, [
                                             'title' => '栏目信息',
+                                            // btn-update 目标class
                                             'class' => 'layui-btn layui-btn-sm layui-btn-normal',
-                                            // 固定写法
                                             'data-toggle' => 'modal',
                                             'data-target' => '#operate-modal',
                                         ]);
@@ -70,6 +69,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                     },
                                 ],
                             ],
+
                         ],
                     ]); ?>
 
@@ -78,3 +78,4 @@ $this->params['breadcrumbs'][] = $this->title;
         </div>
     </div>
 </div>
+

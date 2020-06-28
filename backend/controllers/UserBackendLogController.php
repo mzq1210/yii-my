@@ -8,7 +8,7 @@ use backend\models\UserBackendLogSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
-use yii\helpers\Url;
+use yii\data\ActiveDataProvider;
 
 /**
  * UserBackendLogController implements the CRUD actions for UserBackendLog model.
@@ -36,11 +36,16 @@ class UserBackendLogController extends Controller
      */
     public function actionIndex()
     {
-        $searchModel = new UserBackendLogSearch();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+        $query = UserBackendLog::find();
+
+        $dataProvider = new ActiveDataProvider([
+            'query' => $query,
+            'pagination' => [
+                'pageSize' => 10,
+            ]
+        ]);
 
         return $this->render('index', [
-            'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
         ]);
     }

@@ -61,14 +61,14 @@ return [
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
-        'assetManager' => [
+        /*'assetManager' => [
             'appendTimestamp' => true,
             'bundles' => [
                 'dmstr\web\AdminLteAsset' => [
                     'skin' => 'skin-red',
                 ],
             ],
-        ],
+        ],*/
 
         'authManager' => [
             'class' => 'yii\rbac\DbManager',
