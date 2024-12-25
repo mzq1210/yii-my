@@ -29,7 +29,7 @@ class Blog extends \yii\db\ActiveRecord
     {
         return [
             [['content'], 'string'],
-            [['create_time'], 'safe'],
+            [['created_at'], 'safe'],
             [['title'], 'string', 'max' => 100],
         ];
     }
@@ -43,7 +43,7 @@ class Blog extends \yii\db\ActiveRecord
             'id' => 'ID',
             'title' => 'Title',
             'content' => 'Content',
-            'create_time' => 'Create Time',
+            'created_at' => 'Create Time',
         ];
     }
 }

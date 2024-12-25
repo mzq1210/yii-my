@@ -18,7 +18,7 @@ class BlogSearch extends Blog
     {
         return [
             [['id'], 'integer'],
-            [['title', 'content', 'create_time'], 'safe'],
+            [['title', 'content', 'created_at'], 'safe'],
         ];
     }
 
@@ -59,7 +59,7 @@ class BlogSearch extends Blog
         // grid filtering conditions
         $query->andFilterWhere([
             'id' => $this->id,
-            'create_time' => $this->create_time,
+            'created_at' => $this->created_at,
         ]);
 
         $query->andFilterWhere(['like', 'title', $this->title])

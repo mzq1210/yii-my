@@ -1,10 +1,17 @@
 <?php
 use yii\helpers\Html;
 
+$module = Yii::$app->controller->module;
+if(isset($module) && $module->id == 'admin'){
+    backend\assets\AppAsset::register($this);
+}
+
 backend\assets\LayuiAsset::register($this);
 
 $contro = Yii::$app->controller->id;
 $action = Yii::$app->controller->action->id;
+
+
 $router = $contro . '/'. $action;
 ?>
 <?php $this->beginPage() ?>
